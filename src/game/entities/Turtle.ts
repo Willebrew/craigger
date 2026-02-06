@@ -17,7 +17,7 @@ export class Turtle {
   constructor(
     x: number, y: number, width: number, speed: number,
     direction: 1 | -1, color: string,
-    surfaceDuration = 3000, diveDuration = 1000,
+    surfaceDuration = 4500, diveDuration = 800,
   ) {
     this.x = x;
     this.y = y;

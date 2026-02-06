@@ -32,7 +32,7 @@ export class Vehicle {
   }
 
   getHitbox(): { x: number; y: number; w: number; h: number } {
-    const shrink = 0.1; // 80% hitbox for fairness
+    const shrink = 0.2; // 60% hitbox — very forgiving
     return {
       x: this.x + shrink,
       y: this.y + shrink,

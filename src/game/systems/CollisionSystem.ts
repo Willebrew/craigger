@@ -15,10 +15,10 @@ function aabbOverlap(
 export class CollisionSystem {
   checkVehicleCollision(player: Player, vehicles: Vehicle[]): boolean {
     const pos = player.getGridPosition();
-    const px = pos.x + 0.15;
-    const py = pos.y + 0.15;
-    const pw = 0.7;
-    const ph = 0.7;
+    const px = pos.x + 0.25;
+    const py = pos.y + 0.25;
+    const pw = 0.5;
+    const ph = 0.5;
 
     for (const v of vehicles) {
       const hb = v.getHitbox();
@@ -45,10 +45,11 @@ export class CollisionSystem {
       return { onPlatform: true, platformSpeed: 0, platformDirection: 0 }; // Not on water
     }
 
-    const px = player.x + 0.2;
-    const py = pos.y + 0.2;
-    const pw = 0.6;
-    const ph = 0.6;
+    // Generous detection — easier to land on platforms
+    const px = player.x + 0.35;
+    const py = pos.y + 0.35;
+    const pw = 0.3;
+    const ph = 0.3;
 
     // Check logs
     for (const log of logs) {
@@ -76,7 +77,7 @@ export class CollisionSystem {
 
     for (let i = 0; i < goalSlots.length; i++) {
       const slot = goalSlots[i];
-      if (!slot.filled && Math.abs(pos.x - slot.x) <= 0.8) {
+      if (!slot.filled && Math.abs(pos.x - slot.x) <= 1.2) {
         return i;
       }
     }
