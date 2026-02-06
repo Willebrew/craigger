@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Craigger - A Frogger Adventure",
+  title: "Craigger - A Craig Inspired Adventure",
   description: "Help Craig cross the road and river!",
 };
 
