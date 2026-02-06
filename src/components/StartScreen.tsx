@@ -11,7 +11,7 @@ export default function StartScreen({ onStart }: StartScreenProps) {
         <h1 className="text-4xl sm:text-6xl font-bold text-green-400 mb-2">
           CRAIGGER
         </h1>
-        <p className="text-sm text-gray-400 mb-8">A Frogger-Inspired Adventure</p>
+        <p className="text-sm text-gray-400 mb-8">A Craig-Inspired Adventure</p>
 
         <button
           onClick={onStart}
