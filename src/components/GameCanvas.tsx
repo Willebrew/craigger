@@ -99,37 +99,44 @@ export default function GameCanvas() {
       {/* D-pad for mobile */}
       {(gameState === 'playing' || gameState === 'dying') && (
         <div
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 md:hidden pointer-events-auto"
-          style={{ touchAction: 'none', zIndex: 50 }}
+          className="absolute left-1/2 -translate-x-1/2 md:hidden pointer-events-auto"
+          style={{ touchAction: 'none', zIndex: 50, bottom: 'min(4vw, 24px)' }}
           onTouchStart={(e) => e.stopPropagation()}
           onTouchEnd={(e) => e.stopPropagation()}
           onTouchMove={(e) => e.stopPropagation()}
         >
-          <div className="grid grid-cols-3 gap-1" style={{ width: '168px' }}>
+          <div
+            className="grid grid-cols-3"
+            style={{ gap: 'min(2vw, 12px)' }}
+          >
             <div />
             <button
-              className="w-14 h-14 bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white text-2xl select-none"
+              className="bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white select-none"
+              style={{ width: 'min(16vw, 80px)', height: 'min(16vw, 80px)', fontSize: 'min(6vw, 28px)' }}
               onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); handleDpad('up'); }}
             >
               ▲
             </button>
             <div />
             <button
-              className="w-14 h-14 bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white text-2xl select-none"
+              className="bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white select-none"
+              style={{ width: 'min(16vw, 80px)', height: 'min(16vw, 80px)', fontSize: 'min(6vw, 28px)' }}
               onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); handleDpad('left'); }}
             >
               ◀
             </button>
             <div />
             <button
-              className="w-14 h-14 bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white text-2xl select-none"
+              className="bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white select-none"
+              style={{ width: 'min(16vw, 80px)', height: 'min(16vw, 80px)', fontSize: 'min(6vw, 28px)' }}
               onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); handleDpad('right'); }}
             >
               ▶
             </button>
             <div />
             <button
-              className="w-14 h-14 bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white text-2xl select-none"
+              className="bg-white/25 rounded-lg active:bg-white/50 flex items-center justify-center text-white select-none"
+              style={{ width: 'min(16vw, 80px)', height: 'min(16vw, 80px)', fontSize: 'min(6vw, 28px)' }}
               onPointerDown={(e) => { e.preventDefault(); e.stopPropagation(); handleDpad('down'); }}
             >
               ▼
@@ -141,3 +148,4 @@ export default function GameCanvas() {
     </div>
   );
 }
+
